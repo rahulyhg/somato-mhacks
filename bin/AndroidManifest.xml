@@ -7,42 +7,96 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
-    
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <permission
+        android:name="com.pdhurbnl.gcm.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.pdhurbnl.gcm.permission.C2D_MESSAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Black.NoTitleBar" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity
             android:name="com.pdhurbnl.somato.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.pdhurbnl.somato.LoginActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.pdhurbnl.somato.RegisterActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.DEFAULT" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.pdhurbnl.somato.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.pdhurbnl.gcm" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.pdhurbnl.somato.GcmIntentService" />
+
+        <activity
+            android:name="com.pdhurbnl.somato.EditCardActivity"
+            android:label="@string/title_activity_edit_card"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pdhurbnl.somato.SelectShare"
+            android:label="@string/title_activity_select_share"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pdhurbnl.somato.ViewCardActivity"
+            android:label="@string/title_activity_view_card"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.DEFAULT" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.pdhurbnl.somato.ReceiveCardActivity"
+            android:label="@string/title_activity_receive_card" >
         </activity>
     </application>
 

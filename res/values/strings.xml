@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
+
     <string name="login_btn">Login</string>
     <string name="password_hint">Password</string>
     <string name="username_hint">Username</string>
@@ -16,5 +16,14 @@
     <string name="confirm">Confirm Password</string>
     <string name="password">Password</string>
     <string name="register">Register >></string>
+    <string name="title_activity_edit_card">EditCardActivity</string>
+    <string name="linkedin">www.linkedin.com/you</string>
+    <string name="website">Website</string>
+    <string name="email">Email</string>
+    <string name="job_description">Job Description</string>
+    <string name="phone">Phone</string>
+    <string name="title_activity_select_share">SelectShare</string>
+    <string name="title_activity_view_card">ViewCardActivity</string>
+    <string name="title_activity_receive_card">ReceiveCardActivity</string>
 
 </resources>

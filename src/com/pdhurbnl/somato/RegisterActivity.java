@@ -45,7 +45,7 @@ public class RegisterActivity extends Activity {
 		
 		// Please wait message
 		Toast.makeText(this, 
-				"Please wait, logging in...",
+				"Please wait, registering...",
 				Toast.LENGTH_SHORT
 				).show();
 		

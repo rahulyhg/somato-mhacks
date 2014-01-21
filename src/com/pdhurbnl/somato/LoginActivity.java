@@ -38,6 +38,11 @@ public class LoginActivity extends Activity {
 		EditText passwordField = (EditText) findViewById(R.id.PasswordField);
 		String password = passwordField.getText().toString();
 		
+		// Please wait message
+		Toast.makeText(this,
+				"Please wait, logging in...", Toast.LENGTH_SHORT)
+				.show();
+		
 		// Set up params
 		RequestParams params = new RequestParams();
 		params.put("email", email);
@@ -77,6 +82,10 @@ public class LoginActivity extends Activity {
 				    	SharedPreferences.Editor editor = sharedPrefs.edit();
 				    	editor.putString("user_id", response);
 				    	editor.commit();
+				    	
+				    	// Start main activity
+				    	Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+				    	startActivity(intent);
 			    	}
 			    }
 			}

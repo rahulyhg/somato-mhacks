@@ -43,16 +43,6 @@
 	    android:hint="@string/password"
 	    android:inputType="textPassword" />
 
-	<Button
-	    android:id="@+id/enter"
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:layout_alignLeft="@+id/PasswordField"
-	    android:layout_alignRight="@+id/PasswordField"
-	    android:layout_below="@+id/PasswordField"
-	    android:text="@string/submit"
-	    android:onClick="register" />
-
 	<ImageView
 	    android:id="@+id/somatoText"
 	    android:layout_width="wrap_content"
@@ -70,9 +60,19 @@
 	    android:layout_below="@+id/somatoText"
 	    android:layout_marginTop="23dp"
 	    android:ems="8"
-	    android:hint="@string/user_hint" >
+	    android:hint="Email Address" >
 
 	    <requestFocus />
 	</EditText>
+
+	<Button
+	    android:id="@+id/enter"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@+id/background"
+	    android:layout_alignLeft="@+id/PasswordField"
+	    android:layout_alignRight="@+id/PasswordField"
+	    android:onClick="register"
+	    android:text="@string/submit" />
 	
 </RelativeLayout>
